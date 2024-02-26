@@ -6,9 +6,9 @@ pipeline {
   }
 
   stages {
-    stage ('check-out') {
+    stage('check-out') {
       steps {
-        git 'https://github.com/ash2code/JavaCalculator.git'
+        git url: 'https://github.com/ash2code/JavaCalculator.git'
       }
     }
     stage('code-build') {
@@ -20,13 +20,10 @@ pipeline {
       steps {
         sh 'mvn clean verify sonar:sonar \
             -Dsonar.projectKey=calculator \
-            -Dsonar.projectName='calculator' \
+            -Dsonar.projectName="calculator" \
             -Dsonar.host.url=http://54.173.97.31:9000 \
-            -Dsonar.token=sqp_0792151799db536d976472233b2498f71d850c0e'
+            -Dsonar.login=sqp_0792151799db536d976472233b2498f71d850c0e'
       }
     }
   }
 }
-        
-
-  
