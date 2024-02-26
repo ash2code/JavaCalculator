@@ -29,7 +29,6 @@ pipeline {
             steps {
                 script {
                     nexusArtifactUploader(
-                        nexusInstanceId: 'nexus-instance', // Provide the ID of the Nexus instance defined in Jenkins
                         protocol: 'http',
                         nexusUrl: 'http://54.173.97.31:8081',
                         groupId: 'com.ravi.cal',
