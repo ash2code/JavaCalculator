@@ -26,18 +26,23 @@ pipeline {
       }
     }
     stage('upload-to-nexus') {
-    steps {
-      script {
-        nexusArtifactUploader(
-          credentialsId: 'nexus-user',
-          groupId: 'com.ravi.cal',
-          nexusUrl: '54.173.97.31:8081',
-          nexusVersion: 'nexus3',
-          protocol: 'http',
-          repository: 'calculator',
-          version: '1.3',
-          file: 'JavaCalculator.jar'
-        )
+      steps {
+        script {
+          nexusArtifactUploader(
+            nexusVersion: 'nexus3',
+            protocol: 'http',
+            nexusUrl: '54.173.97.31:8081',
+            groupId: 'com.ravi.cal',
+            version: '1.3',
+            repository: 'calculator',
+            credentialsId: 'nexus-user', 
+            artifacts: [
+              [artifactId: 'JavaCalculator',
+               file: 'JavaCalculator.jar',
+               type: 'jar']
+            ]
+          )
+        }
       }
     }
   }
