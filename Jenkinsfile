@@ -20,9 +20,9 @@ pipeline {
       steps {
         sh 'mvn clean verify sonar:sonar \
             -Dsonar.projectKey=calculator \
-            -Dsonar.projectName="calculator" \
+            -Dsonar.projectName='calculator' \
             -Dsonar.host.url=http://54.173.97.31:9000 \
-            -Dsonar.login=sqp_0792151799db536d976472233b2498f71d850c0e'
+            -Dsonar.token=sqp_0792151799db536d976472233b2498f71d850c0e'
       }
     }
   }
