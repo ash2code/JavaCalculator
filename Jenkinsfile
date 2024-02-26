@@ -1,16 +1,18 @@
 pipeline {
-  agent any
+  agent any 
 
   tools {
     maven 'Maven3'
   }
 
   stages {
-    stage('scm-checkout') {
+    stage ('check-out') {
       steps {
-        git branch: 'main', changelog: false, poll: false,
-          url: 'https://github.com/ash2code/JavaCalculator.git'
+        git 'https://github.com/ash2code/JavaCalculator.git'
       }
     }
   }
 }
+        
+
+  
