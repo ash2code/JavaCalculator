@@ -22,3 +22,9 @@ jobs:
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: test with Maven
       run: mvn test
+    - name: sonar analysis
+      run: mvn clean verify sonar:sonar \
+           -Dsonar.projectKey=Github-Actions \
+           -Dsonar.projectName='Github-Actions' \
+           -Dsonar.host.url=http://54.208.63.149:9000 \
+           -Dsonar.token=sqp_faf3d6e3b70ab1cb84ea0ae2f05072e975de5369
