@@ -32,7 +32,7 @@ public class Calculator {
 		
 		return first*second;
 	}
-	
+	//java code
 	public static void main(String[] args) {
 
 		long first = Long.parseLong(args[0]);
